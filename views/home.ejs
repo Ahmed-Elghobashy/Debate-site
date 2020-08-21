@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change My Mind</title>
+  <link rel="stylesheet" href="styles/server.css">
+  <link rel="stylesheet" href="styles/home.css">
+</head>
+
+<body>
+  <!-- including the header -->
+  <%- include('./partials/header.ejs') %>
+  <!-- including the sidebar   -->
+  <%- include('./partials/side.ejs') %>
+  <!-- include the button -->
+  <%-include('./partials/make-server-modal.ejs') %>
+  <div id="home-container">
+
+    <div id="server-container">
+      <!-- This will add a div server for each server in the database -->
+      <%- include('./partials/server.ejs') %>
+    </div>
+
+
+  </div>
+  </div>
+  <script src="scripts/side.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</body>
+
+</html>

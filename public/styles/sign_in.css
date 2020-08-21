@@ -1,0 +1,85 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.center_hor {
+  margin: 0 auto;
+}
+/*make media query to make the sign_in box take 90% in mobile mode */
+.box_container {
+  min-width: 300px;
+  width: 25%;
+  border: 3px solid black;
+  height: fit-content;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  min-height: 500px;
+}
+
+.soft_edges {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.input {
+  /* border: 2px solid black; */
+  margin: 20px;
+  height: 60%;
+  width: 95%;
+}
+
+input,
+label {
+  display: block;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 80%;
+  height: 100%;
+  outline: none;
+  height: 25px;
+}
+
+input[type="submit"] {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 80%;
+  height: 15%;
+}
+
+label {
+  margin-left: 10%;
+  margin-bottom: 5px;
+}
+
+.inp_container {
+  /* border: 2px solid black; */
+  /* text-align: center; */
+  margin-bottom: 10px;
+}
+
+.box_container h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* border: 3px solid seagreen; */
+  text-align: center;
+  margin-top: 70px;
+}
+
+#bottom_text {
+  margin-top: 15px;
+  margin-right: 5px;
+  float: right;
+}

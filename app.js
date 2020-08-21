@@ -1,0 +1,77 @@
+const express = require("express");
+const socket = require("socket.io");
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
+
+//requiring models
+const chatServer = require("./models/server.js");
+const User = require("./models/user.js");
+
+//requiring controller
+const onSocketConnection = require("./controllers/socketController.js");
+const homeController = require('./controllers/homeController');
+const signInController = require('./controllers/signInController');
+const logOutController = require("./controllers/logOut.js");
+
+
+//routes  require
+const serverRoute = require("./routes/server/serverRoute");
+//socket set up
+var server = null;
+var io = null;
+
+//express app
+const app = express();
+
+//connecting to the database
+const mongoose = require("mongoose");
+const { serialize } = require("v8");
+const createUser = require("./controllers/createUser.js");
+const dbURL =
+  "mongodb+srv://Test_user:test123@cluster0.kqn3h.mongodb.net/Chat-app?retryWrites=true&w=majority";
+
+mongoose
+  .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    server = app.listen(3005, () => {
+      console.log("now listening ");
+    });
+    io = socket(server);
+    onSocketConnection(io);
+  })
+  .catch((err) => console.log(err));
+//view engine
+app.set("view engine", "ejs");
+
+//static &middleware
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+//##########################
+app.post("/create-user", createUser);
+
+app.post("/sign-in", signInController);
+
+
+//handle log out requests
+
+app.post('/log-out', logOutController)
+//##########################
+
+//routes
+
+app.use(serverRoute);
+
+app.get("/", homeController);
+
+app.get("/sign-up", (req, res) => {
+  res.render("sign-up");
+});
+
+app.get("/sign-in", (req, res) => {
+  res.render("sign-in");
+});
+
+app.use((req, res) => {
+  res.send("error 404 not found");
+});

@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="styles/modal.css">
+
+<div class="modal" id="make-server">
+  <div class="modal-content">
+    <a href="#" id="close-modal" onclick="closeModal()">&times;</a>
+    <form action="server/create" method="post">
+      <div id="labels">
+        <label for="name">server name:</label>
+        <label for="private">private:</label>
+        <label for="password">password:</label>
+        <label for="premise">premise:</label>
+      </div>
+      <div id="inputs">
+        <input type="text" name="name" />
+        <input type="checkbox" name="private" id="pass-checkbox" />
+        <input type="password" name="password" id="password-input" disabled />
+        <textarea name="premise" id="" cols="15" rows="5"></textarea>
+      </div>
+      <input type="submit" value="make-server" id="make-server-button" />
+    </form>
+  </div>
+</div>
+
+
+
+<script src="scripts/modal.js"></script>

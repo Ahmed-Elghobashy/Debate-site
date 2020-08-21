@@ -1,0 +1,56 @@
+<header class="sticky header">
+  <a href="#" onclick="handleSideMenu()">
+    <!-- <a href="#" onclick="openSideMenu()"> -->
+    <svg width="30" height="30">
+      <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+      <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+      <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+    </svg>
+  </a>
+  <!-- <div id="logo-container"> -->
+  <a href="/">
+    <img src="https://www.placebear.com/70/70" id="logo-container" alt="" />
+  </a>
+  <!-- </div> -->
+  <a href="#" onclick="openModal()">
+    <button id="open-server-button">
+      Make server
+    </button>
+  </a>
+  <a href="#" onclick="logOut()">
+    <img id="log-out" src="./images/log-out.png" alt="">
+  </a>
+  <a href="#">
+    <i class="arrow-down" onclick="popUp()"></i>
+  </a>
+</header>
+<%-include('./popUpBox.ejs')  %>
+<script src="/scripts/side.js"></script>
+<script src="/scripts/header.js"></script>
+<link rel="stylesheet" href="/styles/header.css" />
+
+<script>
+  const arrow = document.querySelector("i.arrow-down");
+  const logOutElem = document.querySelector("a #log-out");
+
+  function showArrow() {
+    arrow.classList.remove("invisible");
+    logOutElem.classList.add("invisible");
+  }
+
+  function showLogOut() {
+    arrow.classList.add("invisible");
+    logOutElem.classList.remove("invisible");
+  }
+</script>
+
+<% if (_id) { %>
+<script>
+  showLogOut();
+  console.log("I came here");
+</script>
+<% } else { %>
+<script>
+  showArrow();
+</script>
+<%}  %>

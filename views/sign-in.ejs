@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Sign in</title>
+  <link rel="stylesheet" href="/styles/sign_in.css" />
+</head>
+
+<body>
+  <div class="box_container soft_edges">
+    <h1 id="sign_in_header">Sign in</h1>
+    <form class="input center_hor" action="/sign-in" method="post">
+      <div id="email_container" class="center_hor inp_container">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email_inp" class="center_hor" placeholder="Enter Email" />
+      </div>
+      <br style="clear: both;" />
+      <div id="password_container" class="center_hor inp_container">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="pass_inp" class="center_hor" placeholder="Enter password" />
+      </div>
+      <input type="submit" name="" value="Login" class="center_hor" />
+      <div id="bottom_text">
+        <a href="#">forgot password?</a><br />
+        <a href="./sign-up">Don't have an account?</a>
+      </div>
+    </form>
+  </div>
+  <script src="/scripts/sign-in.js" type="module"></script>
+</body>
+
+</html>

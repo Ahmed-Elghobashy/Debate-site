@@ -1,0 +1,53 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+#container {
+    height: 90%;
+    width: 90%;
+    /* border: 1px solid red; */
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 70px;
+    min-width: 400px;
+}
+
+#chat-text {
+    position: relative;
+    bottom: 0;
+    width: 80%;
+    margin-top: 10px;
+}
+
+#output {
+    height: 80%;
+    width: 80%;
+    border: 1px solid black;
+    overflow-y: scroll;
+    /* font-size: 4em; */
+    white-space: pre-line;
+
+}
+
+#chat-text-container {
+    width: 70%;
+    min-width: 350px;
+}
+
+input[type="submit"] {
+    float: right;
+    position: relative;
+    top: 35px;
+    width: 5%;
+    min-width: 60px;
+}
+
+#status{
+    text-align: center;
+    color: silver;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+ /* add media query to make the container have 100% width on mobile view */

@@ -1,0 +1,27 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.server{
+    margin-bottom: 10px;
+}
+
+#server-container{
+  margin: 0 auto;
+  width: 80%;
+  min-width: 350px;
+  max-width: 760px;
+  position: relative;
+  top: 30%; 
+}
+
+#home-container {
+  position: relative;
+  width: 100%;
+  top: 60px;
+  height: 100%;
+  overflow-y: scroll;
+  margin: 0;
+}

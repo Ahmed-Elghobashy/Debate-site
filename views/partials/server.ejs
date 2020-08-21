@@ -1,0 +1,19 @@
+<!-- This code creates a server div for each server in the database -->
+<%  chatServers.forEach(element=> { %>
+<div class="server">
+  <%# server.title %>
+  <div class="server-info">
+    <h3><%= element.name %></h3>
+    <%# server.premise %>
+    <div><%= element.premise %></div>
+  </div>
+  <a href="./server/<%=element.id%>" class="join-server-link"> <button class=" join-server">join
+      server</button></a>
+
+</div>
+<%}); %>
+
+<link rel=" stylesheet" href="styles/server.css">
+<script>
+
+</script>

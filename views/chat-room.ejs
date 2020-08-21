@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/chat-room.css">
+</head>
+
+<body>
+    <!-- including the header -->
+    <%- include('./partials/header.ejs') %>
+    <!--  -->
+    <%- include('./partials/side.ejs') %>
+    <div id="container" data-roomID="<%=Roomid%>" data-username="<%=username%>">
+        <div id="output">
+            <p id="chat-text-output"></p>
+            <div id="status"></div>
+        </div>
+        <div id="chat-text-container">
+            <!-- <input type="text" id="chat text"> -->
+            <textarea name="chat-text" id="chat-text" cols="5" rows="4" placeholder="write text here"
+                onchange="changeText()"></textarea>
+            <input type="submit">
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/scripts/chat-room.js"></script>
+
+
+</html>

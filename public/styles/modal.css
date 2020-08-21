@@ -1,0 +1,85 @@
+#make-server-button {
+    display: block;
+    width: 30%;
+    height: 20px;
+    position: relative;
+    bottom: -35%;
+    left: 30%;
+    right: 30%;
+  }
+
+  #close-modal {
+    float: right;
+    font-size: 22px;
+    color: black;
+  }
+
+  .modal-content div {
+    position: relative;
+    top: 50px;
+  }
+
+  #inputs {
+    float: right;
+    width: 60%;
+  }
+
+  #inputs input,
+  textarea {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  #inputs input[type="text"],
+  input[type="password"],
+  textarea {
+    width: 80%;
+  }
+
+  #labels {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    left: 10%;
+  }
+
+  #labels label {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  form {
+    height: 100%;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    /* Could be more or less, depending on screen size */
+    height: 400px;
+    min-width: 390px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }

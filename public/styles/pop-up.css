@@ -1,0 +1,22 @@
+#pop-up {
+    width: 210px;
+    height: 130px;
+    float: right;
+    border: 2px solid grey;
+    z-index: 3;
+    position: fixed;
+    right: 5px;
+    top: 45px;
+    background-color: #31353b;
+}
+
+.soft_edges {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.invisible {
+    visibility: hidden;
+}
