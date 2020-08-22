@@ -10,7 +10,16 @@ async function signInController(req, res) {
         res.cookie("jwt", token, { httpOnly: true, maxAge: 3000 * 1000 });
         res.redirect("/");
     } catch (err) {
-        console.log(err);
+        if (err.message.includes("incorrect password"))
+            //Here handle the error when entering incorrect password
+            res.redirect("/sign-in");
+        else if (err.message.includes("incorrect Email"))
+            //Here handle the error when entering incorrect email
+            res.redirect("/sign-in");
+        else {
+            //process failed please try again
+            res.redirect("/sign-in")
+        }
     }
 }
 

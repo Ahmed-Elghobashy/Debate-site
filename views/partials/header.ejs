@@ -29,20 +29,14 @@
 <script src="/scripts/header.js"></script>
 <link rel="stylesheet" href="/styles/header.css" />
 
-<script>
-  const arrow = document.querySelector("i.arrow-down");
-  const logOutElem = document.querySelector("a #log-out");
 
-  function showArrow() {
-    arrow.classList.remove("invisible");
-    logOutElem.classList.add("invisible");
-  }
+<!-- Make modification  to make a function that handles multiple
+   things based on the rule of the user like: 
+      1-being able to create servers
+      2-the side menu doesn't appear to him
+      3-the sign in popup only appears to him
+ -->
 
-  function showLogOut() {
-    arrow.classList.add("invisible");
-    logOutElem.classList.remove("invisible");
-  }
-</script>
 
 <% if (_id) { %>
 <script>

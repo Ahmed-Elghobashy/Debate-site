@@ -48,15 +48,15 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 //##########################
+
+
+//handling post requests
 app.post("/create-user", createUser);
 
 app.post("/sign-in", signInController);
 
+app.post('/log-out', logOutController);
 
-//handle log out requests
-
-app.post('/log-out', logOutController)
-//##########################
 
 //routes
 

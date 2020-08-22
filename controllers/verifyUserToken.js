@@ -1,4 +1,5 @@
 //verifies the User Log in token and returns the User id and the role
+const jwt = require("jsonwebtoken");
 
 function verifyUserToken(req) {
     const token = req.cookies.jwt;
