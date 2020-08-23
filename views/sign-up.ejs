@@ -3,25 +3,28 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Sign in</title>
+  <title>Sign up</title>
   <link rel="stylesheet" href="/styles/sign_in.css" />
 </head>
 
 <body>
   <div class="box_container soft_edges">
     <h1 id="sign_in_header">Sign up</h1>
-    <form class="input center_hor" action="/create-user" method="post">
+    <form class="input center_hor" action="/sign-up" method="post">
       <div id="username_container" class="center_hor inp_container">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" class="center_hor" placeholder="Enter username" />
+        <div class="validate invisible">Username is already used</div>
       </div>
       <div id="email_container" class="center_hor inp_container">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email_inp" class="center_hor" placeholder="Enter Email" />
+        <div class="validate invisible">Email is already used</div>
       </div>
       <div id="password_container" class="center_hor inp_container">
         <label for="password">Password:</label>
         <input type="password" name="password" id="pass_inp" class="center_hor" placeholder="Enter password" />
+        <div class="validate invisible"></div>
       </div>
       <input type="submit" name="" value="Sign up" class="center_hor" />
       <div id="bottom_text">
@@ -29,7 +32,64 @@
       </div>
     </form>
   </div>
-  <script src="/scripts/sign-up.js" type="module"></script>
+
+  <script>
+    function validateEmail() {
+      document.querySelector('#email_container .validate').classList.remove("invisible");
+    }
+
+    function validateUsername() {
+      document.querySelector("#username_container .validate").classList.remove("invisible");
+    }
+
+    function validatePassword(err) {
+      const passwordValidate = document.querySelector("#password_container .validate");
+      passwordValidate.innerHTML = err;
+      passwordValidate.classList.remove("invisible");
+
+    }
+
+    function fillUsername(username) {
+      const usernameInput = document.querySelector("#username_container input");
+      usernameInput.value = username;
+    }
+
+    function fillEmail(email) {
+      console.log("I came here in the fill email " + email);
+      const emailInput = document.querySelector("#email_inp");
+      emailInput.value = email;
+    }
+  </script>
+
+  <% if (errors.username) { %>
+  <script>
+    validateUsername();
+  </script>
+  <% } %>
+
+  <% if (errors.email) { %>
+  <script>
+    validateEmail();
+  </script>
+  <% } %>
+  <% if (errors.password) { %>
+  <script>
+    validatePassword("<%=errors.password %>");
+  </script>
+  <% } %>
+
+  <% if (username) { %>
+  <script>
+    fillUsername("<%=username%>");
+  </script>
+  <% } %>
+
+  <% if (email) { %>
+  <script>
+    fillEmail("<%=email%>");
+  </script>
+
+  <% } %>
 </body>
 
 </html>

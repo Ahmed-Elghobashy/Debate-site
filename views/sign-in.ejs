@@ -11,6 +11,7 @@
   <div class="box_container soft_edges">
     <h1 id="sign_in_header">Sign in</h1>
     <form class="input center_hor" action="/sign-in" method="post">
+      <div class="validate invisible">Wrong email or password</div>
       <div id="email_container" class="center_hor inp_container">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email_inp" class="center_hor" placeholder="Enter Email" />
@@ -28,6 +29,17 @@
     </form>
   </div>
   <script src="/scripts/sign-in.js" type="module"></script>
+  <script>
+    const validate = document.querySelector(".validate");
+    function validateError() {
+      validate.classList.remove("invisible");
+    }
+  </script>
+  <% if (error) { %>
+  <script>
+    validateError();
+  </script>
+  <% } %>
 </body>
 
 </html>

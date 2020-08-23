@@ -1,5 +1,5 @@
 <header class="sticky header">
-  <a href="#" onclick="handleSideMenu()">
+  <a href="#" onclick="handleSideMenu()" id="side-menu-hamburger">
     <!-- <a href="#" onclick="openSideMenu()"> -->
     <svg width="30" height="30">
       <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
@@ -12,7 +12,7 @@
     <img src="https://www.placebear.com/70/70" id="logo-container" alt="" />
   </a>
   <!-- </div> -->
-  <a href="#" onclick="openModal()">
+  <a href="#" onclick="openModal()" id="open-server">
     <button id="open-server-button">
       Make server
     </button>
@@ -40,11 +40,10 @@
 
 <% if (_id) { %>
 <script>
-  showLogOut();
-  console.log("I came here");
+  userLogedIn();
 </script>
 <% } else { %>
 <script>
-  showArrow();
+  visitorLogedIn();
 </script>
 <%}  %>

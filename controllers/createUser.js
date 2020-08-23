@@ -7,24 +7,24 @@ async function createUser(req, res) {
     try {
         console.log(username, email, password);
         const user = await User.create({ username, email, password });
-        res.status(201).json(user);
+        res.render('sign-in', {
+            error: ""
+        });
     }
     catch (err) {
         const errors = handleError(err);
-        // console.log(errors);
-        console.log(err);
-        res.status(401).send(errors);
+        res.render('sign-up', { errors, username, email })
     }
 }
 
-function handleError(err) {
+function handleError(err, res) {
     let errors = { username: '', email: '', password: '' };
 
     if (err.code === 11000) {
         if (err.message.includes("username_1 dup key"))
             errors.username = 'that username is already used';
         else if (err.message.includes("email_1 dup key"))
-            errors.email = 'that email is already registered';
+            errors.email = 'that email is already used';
         return errors;
     }
 

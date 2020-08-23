@@ -12,7 +12,7 @@ async function signInController(req, res) {
     } catch (err) {
         if (err.message.includes("incorrect password"))
             //Here handle the error when entering incorrect password
-            res.redirect("/sign-in");
+            res.render("sign-in", { error: "incorrect password" });
         else if (err.message.includes("incorrect Email"))
             //Here handle the error when entering incorrect email
             res.redirect("/sign-in");

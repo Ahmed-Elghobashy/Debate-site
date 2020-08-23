@@ -83,3 +83,15 @@ label {
   margin-right: 5px;
   float: right;
 }
+
+.validate{
+  font-size: 0.9em;
+  color: red;
+  margin-left: 10%;
+  margin-bottom: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.invisible{
+  visibility: hidden;
+}

@@ -4,7 +4,7 @@ function logOut() {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/log-out', true);
     xhr.send();
-    showArrow();
+    visitorLogedIn();
 }
 
 //makes the popUp appear
@@ -17,7 +17,8 @@ function popUp() {
 
 const arrow = document.querySelector("i.arrow-down");
 const logOutElem = document.querySelector("a #log-out");
-
+const makeServer = document.querySelector("#open-server");
+const sideMenuHamburger = document.querySelector("#side-menu-hamburger");
 //Shows the arrow and hides the logout sign (supposed to be used when the user is not logged in)
 function showArrow() {
     arrow.classList.remove("invisible");
@@ -28,4 +29,25 @@ function showArrow() {
 function showLogOut() {
     arrow.classList.add("invisible");
     logOutElem.classList.remove("invisible");
+}
+
+function removeMakeServer() {
+    makeServer.classList.add("invisible");
+}
+
+function disableSideMenu() {
+    sideMenuHamburger.classList.add("invisible");
+}
+
+
+//functions to be executed to show things for when a user is loged in
+function userLogedIn() {
+    showLogOut();
+}
+
+//functions to be executed to show things for a visitor when he is loged in
+function visitorLogedIn() {
+    showArrow();
+    removeMakeServer();
+    disableSideMenu();
 }

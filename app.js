@@ -51,7 +51,7 @@ app.use(cookieParser());
 
 
 //handling post requests
-app.post("/create-user", createUser);
+app.post("/sign-up", createUser);
 
 app.post("/sign-in", signInController);
 
@@ -65,11 +65,19 @@ app.use(serverRoute);
 app.get("/", homeController);
 
 app.get("/sign-up", (req, res) => {
-  res.render("sign-up");
+  res.render("sign-up", {
+    errors: {
+      username: "",
+      email: "",
+      password: "",
+    },
+    username: "",
+    email: "",
+  });
 });
 
 app.get("/sign-in", (req, res) => {
-  res.render("sign-in");
+  res.render("sign-in", { error: "" });
 });
 
 app.use((req, res) => {
