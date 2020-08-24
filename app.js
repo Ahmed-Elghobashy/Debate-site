@@ -22,6 +22,7 @@ var io = null;
 
 //express app
 const app = express();
+var port = process.env.PORT || 3005;
 
 //connecting to the database
 const mongoose = require("mongoose");
@@ -33,7 +34,7 @@ const dbURL =
 mongoose
   .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    server = app.listen(3005, () => {
+    server = app.listen(port, () => {
       console.log("now listening ");
     });
     io = socket(server);
