@@ -74,12 +74,32 @@
     /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 40%;
-    /* Could be more or less, depending on screen size */
-    height: 400px;
-    min-width: 390px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+  }
+  #make-server{
+    width: 40%;
+    /* Could be more or less, depending on screen size */
+    height: 400px;
+    min-width: 390px;
+
+  }
+
+  #server-login{
+    width: 30%;
+    max-width: 320px;
+    min-width: 250px;
+  }
+
+  #server-login input[type="submit"]{
+    margin: 20px auto;
+    margin-top: 5px;
+    display: block;
+  }
+
+  #server-login input[type="password"]{
+    margin: 20px auto;
+    margin-top: 15px;
   }

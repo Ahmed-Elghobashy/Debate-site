@@ -16,6 +16,11 @@ body {
   position: relative;
   top: 30%; 
 }
+@media only screen and (max-width:600px){
+  #server-container{
+    width: 90%;
+  }
+}
 
 #home-container {
   position: relative;

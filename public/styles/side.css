@@ -1,6 +1,5 @@
 #side-menu {
   width: 0px;
-  /* display: none; */
   float: left;
   background-color: #31353b;
   /* border: 2px solid black; */
@@ -56,6 +55,22 @@
   border-radius: inherit;
   z-index: 0;
 }
+/* Makes the profile pic smaller
+   in mobile view because the side menu is smaller 
+   in mobile view */
+@media only screen and (max-width: 600px) {
+  #profile_pic_container{
+    height: 130px;
+    width: 130px;
+  }
+  #profile_pic_container img{
+    height: 130px;
+    width: 130px;
+  }
+
+}
+
+
 
 
 #btn-close {

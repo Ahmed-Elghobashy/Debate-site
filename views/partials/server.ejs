@@ -7,10 +7,12 @@
     <%# server.premise %>
     <div><%= element.premise %></div>
   </div>
-  <a href="./server/<%=element.id%>" class="join-server-link"> <button class=" join-server">join
-      server</button></a>
-
+  <button id="join-server" data-id="<%=element.id%>" data-encrypted="<%=element.encrypted %>"
+    onclick="joinServer('<%=element.id%>','<%=element.encrypted %>')">
+    join server
+  </button>
 </div>
 <%}); %>
 
+<script src="/scripts/joinServer.js"></script>
 <link rel=" stylesheet" href="styles/server.css">

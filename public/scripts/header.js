@@ -1,10 +1,12 @@
 //function to make post request to the server to log out
 function logOut() {
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/log-out', true);
-    xhr.send();
-    visitorLogedIn();
+
+    axios.get('/log-out').then(() => { visitorLogedIn() }).catch(err => console.log(err))
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET', '/log-out', true);
+    // xhr.send();
+
 }
 
 //makes the popUp appear

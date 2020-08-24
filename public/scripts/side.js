@@ -1,3 +1,4 @@
+
 var removeDisplay = function (collection) {
   for (var i = 0; i < collection.length; i++) {
     collection[i].setAttribute("style", "visibility: hidden;");
@@ -37,9 +38,15 @@ function showSideMentItems(sideMenuItems) {
 function openSideMenu() {
   event.preventDefault();
   const sideMenu = document.querySelector("#side-menu");
+  sideMenu.setAttribute('visibility', 'visible')
   const sideMenuItems = sideMenu.children;
   showSideMentItems(sideMenuItems);
-  sideMenu.style.width = "250px";
+  if (window.innerWidth >= 600)
+    sideMenu.style.width = "250px";
+  else {
+    sideMenu.style.width = "170px";
+
+  }
   sideMenu.setAttribute("data-opened", "true");
   setTimeout(() => {
     document
@@ -54,3 +61,31 @@ function openSideMenu() {
   // };
 }
 
+function resizeSideMenu() {
+  const sideMenu = document.querySelector("#side-menu");
+
+  //when it is sized down
+  if (window.innerWidth < 600 && sideMenuOpen()) {
+    sideMenu.style.width = '150px';
+  }
+
+  //when it is sized up
+  if (window.innerWidth > 600 && sideMenuOpen()) {
+    sideMenu.style.width = '250px';
+  }
+
+
+}
+
+function sideMenuOpen() {
+  const sideMenu = document.querySelector("#side-menu");
+
+  if (sideMenu.getAttribute('data-opened') === 'true') {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+window.addEventListener('resize', resizeSideMenu);

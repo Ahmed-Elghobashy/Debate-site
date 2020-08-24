@@ -55,7 +55,7 @@ app.post("/sign-up", createUser);
 
 app.post("/sign-in", signInController);
 
-app.post('/log-out', logOutController);
+app.get('/log-out', logOutController);
 
 
 //routes
@@ -83,3 +83,8 @@ app.get("/sign-in", (req, res) => {
 app.use((req, res) => {
   res.send("error 404 not found");
 });
+
+
+app.post('/server/login', (req, res) => {
+  console.log(req.body);
+})

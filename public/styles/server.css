@@ -28,7 +28,7 @@
     border-top-right-radius: 5px;
   }
 
-.server a, #join-server {
+.server  #join-server {
     float: right;
     position: relative;
     top: 25px;

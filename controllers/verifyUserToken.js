@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 function verifyUserToken(req) {
     const token = req.cookies.jwt;
-    var _id, role;
+    var _id, role, username;
     var theToken;
     if (token) {
         //if he is just a user
@@ -14,14 +14,16 @@ function verifyUserToken(req) {
                 theToken = decodedToken;
             }
         });
+
+
+        username = theToken.username;
         _id = theToken._id;
         role = theToken.role;
     }
     else {
-        console.log("User without email signed in");
         role = "viewer";
     }
-    return { _id, role };
+    return { username, _id, role };
 }
 
 module.exports = verifyUserToken;

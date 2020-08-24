@@ -22,18 +22,6 @@ const serverSchema = Schema({
     require: false,
     default: [],
   }
-  // numOfDebators: {
-  //   type: Number,
-  //   require: false,
-  // },
-  // creator: {
-  //   type: String,
-  //   require: true,
-  // },
-  // viewers: {
-  //   type: Number,
-  //   require: true,
-  // },
 });
 
 const Server = mongoose.model("server", serverSchema);
