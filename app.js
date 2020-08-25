@@ -62,7 +62,10 @@ app.get('/log-out', logOutController);
 
 app.use(serverRoute);
 
-app.get("/", homeController);
+app.get("/", (req, res) => {
+  res.redirect('/');
+})
+app.get("/home", homeController);
 
 app.get("/sign-up", (req, res) => {
   res.render("sign-up", {
