@@ -28,11 +28,13 @@ header.sticky {
 
 #logo-container {
   display: inline-block;
-  border-radius:50%;
-  width: fit-content;
+  /* border-radius:50%; */
+  width: 10%;
+  min-width: 80px;
+  max-width: 100px;
   position: fixed;
   left: 45%;
-  top: 0;
+  top: 5px;
   /* border:2px solid red; */
 }
 
