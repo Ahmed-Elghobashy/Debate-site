@@ -6,7 +6,7 @@ const verifyUserToken = require('./verifyUserToken.js')
 async function homeController(req, res) {
     const { _id, role } = verifyUserToken(req);
     var username = null;
-    const chatServer = getServers();
+    const chatServer = await chatServer.find().catch((err) => console.log(err));
     const user = User.findById(_id).then(result => {
         if (result)
             username = result.username;
@@ -14,9 +14,9 @@ async function homeController(req, res) {
     })
 }
 
-async function getServers() {
-    const chatServers = await chatServer.find().catch((err) => console.log(err));
-    return chatServer;
-}
+// async function getServers() {
+//     const chatServers = await chatServer.find().catch((err) => console.log(err));
+//     return chatServer;
+// }
 
 module.exports = homeController;
