@@ -26,7 +26,6 @@ var port = process.env.PORT || 3005;
 
 //connecting to the database
 const mongoose = require("mongoose");
-const { serialize } = require("v8");
 const createUser = require("./controllers/createUser.js");
 const dbURL =
   "mongodb+srv://Test_user:test123@cluster0.kqn3h.mongodb.net/Chat-app?retryWrites=true&w=majority";
